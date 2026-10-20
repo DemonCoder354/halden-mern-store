@@ -4,8 +4,33 @@ A full-stack online store built with **MongoDB, Express, React and Node.js**.
 Clean editorial design, a professional deep-teal and amber palette, light and dark themes,
 and smooth, purposeful motion powered by Framer Motion.
 
-![Home page, light theme](docs/home.png)
-![Catalog, dark theme](docs/shop-dark.png)
+![Demo: browsing, filtering, cart and checkout](docs/demo.gif)
+
+[Watch the full-quality demo video (MP4, 43 s)](docs/demo.mp4)
+
+## Screenshots
+
+| Home | Categories | Featured products |
+| --- | --- | --- |
+| ![Home hero](docs/screenshots/01-home-hero.png) | ![Categories](docs/screenshots/02-home-categories.png) | ![Featured](docs/screenshots/03-home-featured.png) |
+
+| Catalog | Filtered and sorted | Product page |
+| --- | --- | --- |
+| ![Catalog](docs/screenshots/05-shop.png) | ![Filtered catalog](docs/screenshots/06-shop-filtered.png) | ![Product page](docs/screenshots/07-product.png) |
+
+| Cart drawer | Checkout | Order confirmation |
+| --- | --- | --- |
+| ![Cart drawer](docs/screenshots/08-cart-drawer.png) | ![Checkout](docs/screenshots/09-checkout.png) | ![Order confirmation](docs/screenshots/10-order-success.png) |
+
+| Dark theme: home | Dark theme: product | Story section |
+| --- | --- | --- |
+| ![Dark home](docs/screenshots/11-dark-home.png) | ![Dark product](docs/screenshots/12-dark-product.png) | ![Story section](docs/screenshots/04-home-story.png) |
+
+<p align="center">
+  <img src="docs/screenshots/13-mobile-home.png" alt="Mobile home" width="250" />
+  <img src="docs/screenshots/14-mobile-shop.png" alt="Mobile catalog" width="250" />
+  <img src="docs/screenshots/15-mobile-filters.png" alt="Mobile filters sheet" width="250" />
+</p>
 
 ## Features
 

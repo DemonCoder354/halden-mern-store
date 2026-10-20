@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Navbar from './components/Navbar.jsx';
 import Footer from './components/Footer.jsx';
 import CartDrawer from './components/CartDrawer.jsx';
@@ -19,7 +19,6 @@ function Page({ children }) {
       id="main"
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -8 }}
       transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
@@ -40,17 +39,18 @@ export default function App() {
         Skip to content
       </a>
       <Navbar />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Page><Home /></Page>} />
-          <Route path="/shop" element={<Page><Shop /></Page>} />
-          <Route path="/product/:slug" element={<Page><ProductPage /></Page>} />
-          <Route path="/checkout" element={<Page><Checkout /></Page>} />
-          <Route path="/order/:id" element={<Page><OrderSuccess /></Page>} />
-          <Route path="/policies" element={<Page><Policies /></Page>} />
-          <Route path="*" element={<Page><NotFound /></Page>} />
-        </Routes>
-      </AnimatePresence>
+      {/* Pages fade in on route change. No exit animation: a page-level
+          AnimatePresence in "wait" mode can stall when nested AnimatePresence
+          grids are mid-exit, leaving the old page on screen. */}
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Page><Home /></Page>} />
+        <Route path="/shop" element={<Page><Shop /></Page>} />
+        <Route path="/product/:slug" element={<Page><ProductPage /></Page>} />
+        <Route path="/checkout" element={<Page><Checkout /></Page>} />
+        <Route path="/order/:id" element={<Page><OrderSuccess /></Page>} />
+        <Route path="/policies" element={<Page><Policies /></Page>} />
+        <Route path="*" element={<Page><NotFound /></Page>} />
+      </Routes>
       <Footer />
       <CartDrawer />
       <Toaster />

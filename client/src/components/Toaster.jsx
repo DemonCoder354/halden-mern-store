@@ -5,12 +5,13 @@ import { CheckIcon } from './Icons.jsx';
 
 export default function Toaster() {
   const { toasts, dismiss } = useUI();
-  const { open } = useCart();
+  const { open, isOpen } = useCart();
 
   return (
     <div className="toaster" role="status" aria-live="polite">
       <AnimatePresence>
-        {toasts.map((t) => (
+        {/* Hidden while the cart drawer is open so toasts never cover its Checkout button. */}
+        {!isOpen && toasts.map((t) => (
           <motion.div
             key={t.id}
             layout
