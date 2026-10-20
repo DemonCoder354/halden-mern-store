@@ -64,7 +64,7 @@ and smooth, purposeful motion powered by Framer Motion.
 ## Getting started
 
 ```bash
-git clone https://github.com/<your-username>/halden-mern-store.git
+git clone https://github.com/DemonCoder354/halden-mern-store.git
 cd halden-mern-store
 npm run install:all
 npm run dev
